@@ -1,0 +1,16 @@
+关键词：
+- hidden text
+- special hidden section
+- hint at the end: "if you're still reading this..."
+
+初步判断：
+- 这应该是一个隐写题，PDF 或者文本里面可能藏有信息。
+- 可能需要提取文件元数据或者检查隐藏的文本。
+
+可能工具：
+- pdfinfo
+- exiftool
+- strings
+- binwalk
+- zsteg
+- cyberchef
