@@ -1,0 +1,23 @@
+给了一个png图片，估计是用哪些常用的东西读读元数据
+可能会有flag或者其他的special things in here
+
+1.使用 `exiftool` 查看 PNG 的元数据：
+发现comment异常！
+comment:c3RlZ2hpZGU6Y0VGNmVuZHZjbVE9
+
+2.进行decode：
+echo "c3RlZ2hpZGU6Y0VGNmVuZHZjbVE9" | base64 --decode
+result：     steghide:cEF6endvcmQ=
+再解码一次？
+echo "cEF6endvcmQ=" | base64 --decode
+得到了pAzzword？
+
+不对，这里提示是不是一个新的工具？steghide？
+
+先安装：sudo apt install steghide
+
+终端返回了结果：
+steghide extract -sf img.jpg
+Enter passphrase: pAzzword
+
+wrote extracted data to "flag.txt".
