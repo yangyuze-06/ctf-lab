@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# CTF artifacts
+*.tmp
+*.swp
+
+# Large / disposable outputs
+extracted/*
+screenshots/*
+
+# Keep folders
+!extracted/.gitkeep
+!screenshots/.gitkeep
