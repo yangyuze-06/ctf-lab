@@ -1,0 +1,18 @@
+给了一个disko-1.dd.gz文件
+
+很明显第一步先解压，变成dd文件
+
+1.gunzip disko-1.dd.gz
+得到disko-1.dd
+
+2.探查一下基础信息
+exiftool disko-1.dd（并没有什么值得用的hints）
+strings disko-1.dd
+弹出了很多文字
+用一下这个exp
+
+3.试一下构造exp？
+strings disko-1.dd |grep "pico"
+说不定有结果。
+果然
+picoCTF{1t5_ju5t_4_5tr1n9_be6031da}
