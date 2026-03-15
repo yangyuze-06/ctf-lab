@@ -1,0 +1,20 @@
+给了一个base64编码的一个logs.txt
+根本无法阅读，决定先用：base64进行decode
+
+base64 -d logs.txt >output
+
+用file查看一下这个文件：
+file output
+
+file output： PNG image data, 896 x 1152, 8-bit/color RGB, non-interlaced
+
+看来是一个图片，我们改一下他的后缀看看？
+一个黑客，还送上了一串数字：
+7069636F4354467B666F72656E736963735F616E616C797369735F69735F616D617A696E675F63373564643038657D
+很明显这极大可能就是flag了吧
+挺像ASCII->HEX的
+反编译回去：
+echo 7069636F4354467B666F72656E736963735F616E616C797369735F69735F616D617A696E675F63373564643038657D | xxd -r -p
+
+得到flag：
+picoCTF{forensics_analysis_is_amazing_c75dd08e}
