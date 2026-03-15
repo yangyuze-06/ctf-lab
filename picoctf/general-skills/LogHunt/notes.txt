@@ -1,0 +1,24 @@
+给了一个server.log
+估计是用grep找东西，说有很多碎片，有点意思，
+grep “sth” filename
+先试试：
+
+file <日志文件名>
+wc -l <日志文件名>
+head <日志文件名>
+tail <日志文件名>
+
+1.
+找到一部分：picoCTF{us3_}
+
+2.发现重要规律！
+每个前面都附带了flagpart,直接grep这个应该全部出来了！
+
+3.拼接
+picoCTF{us3_
+y0urlinux_
+sk1lls_
+cedfa5fb}
+
+4.猜测flag：
+picoCTF{us3_y0urlinux_sk1lls_cedfa5fb}
