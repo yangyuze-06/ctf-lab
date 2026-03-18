@@ -1,0 +1,52 @@
+head-dump
+看起来挺像找头文件相关
+hints：
+1,后端开发
+2,头被抛弃了
+
+根据它给到的文档
+在网址后面加上一句heapdump
+下载了一个文件
+
+
+这次不用grep
+用less
+逐字节浏览
+## 🧠 heapdump 文件分析方法
+
+当 grep / strings 无法提取 flag 时：
+
+### 方法：less 手动搜索
+
+1. 打开文件
+
+less heapdump.heapsnapshot
+
+
+2. 搜索关键词
+
+/picoCTF
+
+
+3. 跳转
+- n → 下一个
+- N → 上一个
+
+4. 常见搜索词
+- picoCTF
+- flag
+- secret
+- token
+
+5. 退出
+
+q
+
+
+### ⚠️ 注意
+
+- heapdump 是半文本文件
+- grep 可能失效
+- less 是最稳定方案
+
+picoCTF{Pat!3nt_15_Th3_K3y_a485f162}
