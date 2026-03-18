@@ -21,3 +21,14 @@ screenshots/*
 # Keep folders
 !extracted/.gitkeep
 !screenshots/.gitkeep
+
+# Python virtual environments
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
