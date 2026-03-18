@@ -1,0 +1,20 @@
+hashcrack
+
+首先先连接终端：
+nc verbal-sleep.picoctf.net 62342
+终端返回：
+Welcome!! Looking For the Secret?
+
+We have identified a hash: 482c811da5d5b4bc6d497ffa98491e38
+Enter the password for identified hash: 
+看来需要我们crack这个hash密码
+
+1. 482c811da5d5b4bc6d497ffa98491e38（MD5）->password123
+
+2.b7a875fc1ea228b9061041b7cec4bd3c52ab3ce3（sha1）->letmein
+
+3.916e8c4f79b25028c9e467f1eb8eee6d6bbdff965f9928310ad30a8d88697745（sha256）->qwerty098
+
+常见的hash破解工具都可以使用！
+
+flag is: picoCTF{UseStr0nG_h@shEs_&PaSswDs!_93e052d7}
