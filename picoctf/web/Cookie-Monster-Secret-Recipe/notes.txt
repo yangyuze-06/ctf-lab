@@ -1,0 +1,15 @@
+web题
+找到cookie？
+所有的hints都和cookie有关
+这里打算直接用burp
+有一个登陆界面呢
+试试随便输入一些
+user：admin
+password：123
+返回了：monster need cookie
+我们用burp来抓住那个post包送到重放器
+选中cookie
+这个cookie还挺特殊，可以识别到这是base64
+burp自带了解码的功能
+decode出来的cookie就是flag
+picoCTF{c00k1e_m0nster_l0ves_c00kies_A6FA07D8}
