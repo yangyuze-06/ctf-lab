@@ -1,16 +1,24 @@
-# Python
+# =========================
+# 🐍 Python
+# =========================
 __pycache__/
 *.pyc
+*.pyo
 
-# Editors
-.vscode/
-.idea/
+# Virtual environments
+venv/
+.venv/
 
-# OS
-.DS_Store
-Thumbs.db
+# =========================
+# 🦀 Rust
+# =========================
+/target/
+Cargo.lock
+Cargo.toml
 
-# CTF artifacts
+# =========================
+# 🧠 CTF Artifacts
+# =========================
 *.tmp
 *.swp
 
@@ -18,17 +26,25 @@ Thumbs.db
 extracted/*
 screenshots/*
 
-# Keep folders
+# Keep folder structure
 !extracted/.gitkeep
 !screenshots/.gitkeep
 
-# Python virtual environments
-venv/
-.venv/
-
-# Python cache
-__pycache__/
-*.pyc
-
-# IDE
+# =========================
+# 🛠 Editors / IDE
+# =========================
 .vscode/
+.idea/
+
+# =========================
+# 💻 OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# ⚙️ Misc
+# =========================
+*.log
+*.out
+main
