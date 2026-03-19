@@ -12,9 +12,8 @@ venv/
 # =========================
 # 🦀 Rust
 # =========================
-/target/
+target/
 Cargo.lock
-Cargo.toml
 
 # =========================
 # 🧠 CTF Artifacts
