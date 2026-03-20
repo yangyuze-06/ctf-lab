@@ -1,0 +1,31 @@
+给了一个红色的图片。
+确实是png
+用exiftool查一下看看
+有一个信息引人注目：
+Poem: 
+Crimson heart, vibrant and bold,.Hearts flutter at your sight..Evenings glow softly red,.Cherries burst with sweet life..Kisses linger with your warmth..Love deep as merlot..Scarlet leaves falling softly,.Bold in every stroke.
+
+CHECKLSB？
+
+往这个lsb这个方向走？
+准备下载一个新工具来进行分析
+
+1.先安装ruby：
+sudo apt update
+sudo apt install ruby-full -y
+2.安装zsteg：
+gem installing zsteg
+3.check:
+zsteg -h
+
+开始搜索：
+zsteg -a red.png
+这里有一串可疑base64文本：
+cGljb0NURntyM2RfMXNfdGgzX3VsdDFtNHQzX2N1cjNfZjByXzU0ZG4zNTVffQ==cGljb0NURntyM2RfMXNfdGgzX3VsdDFtNHQzX2N1cjNfZjByXzU0ZG4zNTVffQ==cGljb0NURntyM2RfMXNfdGgzX3VsdDFtNHQzX2N1cjNfZjByXzU0ZG4zNTVffQ==cGljb0NURntyM2RfMXNfdGgzX3VsdDFtNHQzX2N1cjNfZjByXzU0ZG4zNTVffQ==
+
+筛选出重复的：cGljb0NURntyM2RfMXNfdGgzX3VsdDFtNHQzX2N1cjNfZjByXzU0ZG4zNTVffQ==
+
+picoCTF{r3d_1s_th3_ult1m4t3_cur3_f0r_54dn355_}
+
+
+
